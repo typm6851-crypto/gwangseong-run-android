@@ -26,8 +26,7 @@ jobs:
       - name: 앱 압축 풀기
         run: |
           mkdir android-app
-          unzip "$(find . -maxdepth 1 -name '*.zip' -print -quit)" -d android-app
-
+          unzip "광성런_안드로이드_앱_소스-1.zip" -d android-app
       - name: APK 제작
         run: gradle -p android-app assembleDebug
 
