@@ -1,0 +1,38 @@
+name: 광성런 APK 만들기
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 파일 준비
+        uses: actions/checkout@v4
+
+      - name: 자바 설치
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Gradle 설치
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.10.2"
+
+      - name: 앱 압축 풀기
+        run: |
+          mkdir android-app
+          unzip "$(find . -maxdepth 1 -name '*.zip' -print -quit)" -d android-app
+
+      - name: APK 제작
+        run: gradle -p android-app assembleDebug
+
+      - name: APK 저장
+        uses: actions/upload-artifact@v4
+        with:
+          name: 광성런-설치파일
+          path: android-app/app/build/outputs/apk/debug/app-debug.apk
