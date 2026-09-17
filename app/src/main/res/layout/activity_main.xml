@@ -13,6 +13,7 @@
     </LinearLayout>
     <LinearLayout android:id="@+id/runPanel" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
       <Button android:id="@+id/logoutButton" android:layout_width="wrap_content" android:layout_height="48dp" android:layout_gravity="end" android:layout_marginTop="8dp" android:text="로그아웃"/>
+      <Button android:id="@+id/adminButton" android:visibility="gone" android:layout_width="match_parent" android:layout_height="54dp" android:layout_marginTop="8dp" android:background="@drawable/button_bg" android:text="관리자 사이트 열기" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold"/>
       <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/input_bg" android:gravity="center" android:orientation="vertical" android:padding="24dp">
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="측정 거리" android:textColor="@color/muted" android:textSize="14sp"/>
         <TextView android:id="@+id/distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="0.00 km" android:textColor="@color/white" android:textSize="48sp" android:textStyle="bold"/>
