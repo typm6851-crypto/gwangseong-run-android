@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/black" android:fillViewport="true">
+  <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="광성 RUN" android:textColor="@color/white" android:textSize="28sp" android:textStyle="bold"/>
+    <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="로그인해주세요." android:textColor="@color/muted" android:textSize="15sp"/>
+    <LinearLayout android:id="@+id/authPanel" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+      <EditText android:id="@+id/name" android:visibility="gone" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="24dp" android:background="@drawable/input_bg" android:hint="이름" android:inputType="textPersonName" android:textColor="@color/white" android:textColorHint="@color/muted"/>
+      <EditText android:id="@+id/email" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="12dp" android:background="@drawable/input_bg" android:hint="이메일" android:inputType="textEmailAddress" android:textColor="@color/white" android:textColorHint="@color/muted"/>
+      <EditText android:id="@+id/phoneLast4" android:visibility="gone" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="12dp" android:background="@drawable/input_bg" android:hint="휴대폰 뒤 4자리" android:inputType="numberPassword" android:maxLength="4" android:textColor="@color/white" android:textColorHint="@color/muted"/>
+      <EditText android:id="@+id/password" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="12dp" android:background="@drawable/input_bg" android:hint="비밀번호 6자리 이상" android:inputType="textPassword" android:textColor="@color/white" android:textColorHint="@color/muted"/>
+      <Button android:id="@+id/loginButton" android:layout_width="match_parent" android:layout_height="56dp" android:layout_marginTop="12dp" android:background="@drawable/button_bg" android:text="로그인" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold"/>
+      <Button android:id="@+id/registerButton" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginTop="8dp" android:text="회원가입"/>
+      <Button android:id="@+id/resetButton" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="4dp" android:text="비밀번호 찾기"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/runPanel" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+      <Button android:id="@+id/logoutButton" android:layout_width="wrap_content" android:layout_height="48dp" android:layout_gravity="end" android:layout_marginTop="8dp" android:text="로그아웃"/>
+      <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:background="@drawable/input_bg" android:gravity="center" android:orientation="vertical" android:padding="24dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="측정 거리" android:textColor="@color/muted" android:textSize="14sp"/>
+        <TextView android:id="@+id/distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="0.00 km" android:textColor="@color/white" android:textSize="48sp" android:textStyle="bold"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="22dp" android:gravity="center" android:orientation="horizontal">
+          <TextView android:id="@+id/steps" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="0 걸음" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold"/>
+          <TextView android:id="@+id/time" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="00:00" android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold"/>
+          <TextView android:id="@+id/coins" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="0 C" android:textColor="@color/orange" android:textSize="17sp" android:textStyle="bold"/>
+        </LinearLayout>
+      </LinearLayout>
+      <Button android:id="@+id/startButton" android:layout_width="match_parent" android:layout_height="60dp" android:layout_marginTop="20dp" android:background="@drawable/button_bg" android:text="러닝 시작" android:textColor="@color/white" android:textSize="19sp" android:textStyle="bold"/>
+      <Button android:id="@+id/stopButton" android:layout_width="match_parent" android:layout_height="60dp" android:layout_marginTop="12dp" android:background="@drawable/button_bg" android:enabled="false" android:text="측정 종료" android:textColor="@color/white" android:textSize="19sp" android:textStyle="bold"/>
+      <Button android:id="@+id/submitButton" android:layout_width="match_parent" android:layout_height="60dp" android:layout_marginTop="12dp" android:background="@drawable/button_bg" android:enabled="false" android:text="관리자 승인 요청" android:textColor="@color/white" android:textSize="19sp" android:textStyle="bold"/>
+      <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:gravity="center" android:text="화면을 꺼도 측정돼요.\n휴대폰을 바지 주머니나 암밴드에 넣어주세요." android:textColor="@color/muted" android:textSize="14sp"/>
+    </LinearLayout>
+  </LinearLayout>
+</ScrollView>
