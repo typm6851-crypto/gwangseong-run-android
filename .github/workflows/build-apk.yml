@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,3 +35,9 @@ jobs:
         with:
           name: 광성런-설치파일
           path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: 설치 QR용 최신 버전 공개
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "build-${GITHUB_RUN_NUMBER}" app/build/outputs/apk/debug/app-debug.apk --title "광성런 최신 앱" --notes "회원가입, 로그인, 비밀번호 재설정 기능 포함" --latest
