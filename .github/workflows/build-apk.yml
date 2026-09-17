@@ -2,6 +2,7 @@ name: 광성런 APK 만들기
 
 on:
   push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -23,15 +24,11 @@ jobs:
         with:
           gradle-version: "8.10.2"
 
-      - name: 앱 압축 풀기
-        run: |
-          mkdir android-app
-          unzip "광성런_안드로이드_앱_소스-2-1.zip" -d android-app
       - name: APK 제작
-        run: gradle -p android-app assembleDebug
+        run: gradle assembleDebug
 
       - name: APK 저장
         uses: actions/upload-artifact@v4
         with:
           name: 광성런-설치파일
-          path: android-app/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
