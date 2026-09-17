@@ -9,16 +9,16 @@ public final class ApiClient {
     private static final String BASE="https://gwangseong-run.typm6851.chatgpt.site";
     public interface Callback { void done(boolean ok, String message, JSONObject data); }
 
-    public static void login(String email,String password,Callback callback){
-        JSONObject body=new JSONObject(); try{body.put("email",email);body.put("password",password);}catch(Exception ignored){}
+    public static void login(String phone,String password,Callback callback){
+        JSONObject body=new JSONObject(); try{body.put("phone",phone);body.put("password",password);}catch(Exception ignored){}
         post("/api/app/login",body,callback);
     }
-    public static void register(String name,String email,String password,String phoneLast4,Callback callback){
-        JSONObject body=new JSONObject(); try{body.put("name",name);body.put("email",email);body.put("password",password);body.put("phoneLast4",phoneLast4);}catch(Exception ignored){}
+    public static void register(String name,String phone,String password,Callback callback){
+        JSONObject body=new JSONObject(); try{body.put("name",name);body.put("phone",phone);body.put("password",password);}catch(Exception ignored){}
         post("/api/app/register",body,callback);
     }
-    public static void resetPassword(String email,String phoneLast4,String password,Callback callback){
-        JSONObject body=new JSONObject(); try{body.put("email",email);body.put("phoneLast4",phoneLast4);body.put("password",password);}catch(Exception ignored){}
+    public static void resetPassword(String name,String phone,String password,Callback callback){
+        JSONObject body=new JSONObject(); try{body.put("name",name);body.put("phone",phone);body.put("password",password);}catch(Exception ignored){}
         post("/api/app/reset-password",body,callback);
     }
     public static void submit(String token,int steps,long seconds,double km,Callback callback){
